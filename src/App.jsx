@@ -35,11 +35,13 @@ function App() {
           <StepperProvider>{displayStep(currentStep)}</StepperProvider>
         </div>
       </div>
-      <StepperControls
-        handleClick={handleClick}
-        currentStep={currentStep}
-        steps={steps}
-      />
+      {currentStep !== steps.length && (
+        <StepperControls
+          handleClick={handleClick}
+          currentStep={currentStep}
+          steps={steps}
+        />
+      )}
     </div>
   );
 }
